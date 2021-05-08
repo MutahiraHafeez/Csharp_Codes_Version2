@@ -1,0 +1,40 @@
+﻿@model List<EAD_Assignment3_BlogApplication.Models.Users>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<table class="table table-striped table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (EAD_Assignment3_BlogApplication.Models.Users s in Model)
+        {
+
+        <tr>
+            <td>   @s.Name       </td>
+            <td>   @s.Email       </td>
+            <td>   @s.Password       </td>
+
+            <td>
+
+                <a class="btn btn-secondary" asp-action="Details" asp-route-id="@s.Id">Details</a>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@s.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="Remove" asp-route-id="@s.Id">Remove</a>
+            </td>
+        </tr>
+
+        }
+
+
+    </tbody>
+</table>
+<a class="btn btn-info" asp-action="AddUser">Add New User</a>
+<a class="btn btn-info" asp-action="Index" asp-controller="Home">Exit</a>

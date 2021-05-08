@@ -1,0 +1,48 @@
+﻿@using EAD_Assignment3_BlogApplication.Models
+@model Users
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   
+
+    <section class="container-fluid">
+            <div class="text-center ">
+                <span class="align-middle">Create your Blog Apllication account.</span>
+            </div>
+            <div class="text-center">
+                <span class="align-middle">It only takes a minute.</span>
+            </div>
+        <section class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <form class="form-container" method="post" action="UserSignUp">
+                    <div class="mb-3">
+                        <label asp-for="Name">User Name</label><br />
+                        <input asp-for="Name"><br />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email">Email address</label><br />
+                        <input asp-for="Email"><br />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password">Password</label><br />
+                        <input asp-for="Password" type="password"><br />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ImageFile" >Select Image</label><br />
+                        <input asp-for="ImageFile" type="file" accept="image/*"><br />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    <br />
+                    <div class="text-center">
+                        have an account: <a asp-action="UserLogin">Login</a>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </section>
+

@@ -1,0 +1,29 @@
+﻿@using EAD_Assignment3_BlogApplication.Models
+@model Admin
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="container-fluid">
+
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form class="form-container" method="post" action="Admin">
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email">Email address</label>
+                    <input asp-for="Email"><br />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password"><br />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <br />
+                
+            </form>
+        </section>
+    </section>
+</section>

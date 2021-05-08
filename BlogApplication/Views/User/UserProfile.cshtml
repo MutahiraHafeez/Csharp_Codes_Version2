@@ -1,0 +1,67 @@
+﻿@using EAD_Assignment3_BlogApplication.Models
+@model Users
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="UserLogin">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="UserProfile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="ShowPost">Post Home</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<section class="container-fluid">
+
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form class="form-container" method="post" action="UserProfile">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div><h4>Profile</h4></div>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Email address</label>
+                    <input asp-for="Name" class="form-control"><br />
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email address</label>
+                    <input asp-for="Email" class="form-control"><br />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Old Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">New Password</label>
+                    <input asp-for="Password" class="form-control" type="password"><br />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update</button>
+                <br />
+                
+            </form>
+        </section>
+    </section>
+</section>

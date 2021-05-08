@@ -1,0 +1,32 @@
+﻿
+@model List<EAD_Assignment3_BlogApplication.Models.Posts>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<br />
+
+<br />
+<br />
+<table class="table table-striped table-hover table-striped">
+
+    <tbody>
+        @foreach (EAD_Assignment3_BlogApplication.Models.Posts s in Model)
+        {
+
+            <tr>
+                <td>   @s.Name      </td>
+            </tr>
+            <tr>
+                <td>   @s.Title     </td>
+            </tr>
+            <tr>
+                <td>   @s.Post      </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>

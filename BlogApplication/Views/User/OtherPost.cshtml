@@ -1,0 +1,17 @@
+﻿@model EAD_Assignment3_BlogApplication.Models.Posts
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+    <div>
+
+        <p>@Model.Name</p>
+        <p>@Model.Title</p>
+        <p>@Model.Post</p>
+        <a class="btn btn-info" asp-action="EditPost" asp-route-id="@Model.Id">Edit</a>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Remove</a>
+        <a class="btn btn-danger" asp-action="ShowPost" >Back</a>
+
+    </div>

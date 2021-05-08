@@ -1,0 +1,55 @@
+﻿@using EAD_Assignment3_BlogApplication.Models
+@model Posts
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" asp-controller="User" asp-action="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="UserLogin">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="UserProfile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="ShowPost">Post Home</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<section class="container-fluid">
+
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form class="form-container" method="post" action="EditPost">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Title</label>
+                    <input asp-for="Title" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Post" class="form-label">Content</label>
+                    <textarea asp-for="Post" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Post</button>
+                <br />
+            </form>
+        </section>
+    </section>
+</section>

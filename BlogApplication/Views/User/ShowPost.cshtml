@@ -1,0 +1,59 @@
+﻿@model List<EAD_Assignment3_BlogApplication.Models.Posts>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" asp-controller="User" asp-action="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="UserLogin">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="UserProfile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-controller="User" asp-action="ShowPost">Post Home</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<br /> <a class="btn btn-dark" asp-action="CreatePost">Create Post</a>
+<br />
+<br />
+<table class="table table-striped table-hover table-striped">
+
+    <tbody>
+        @foreach (EAD_Assignment3_BlogApplication.Models.Posts s in Model)
+        {
+
+            <tr>
+                <td> <a class="btn btn-info" asp-action="ChoiceView" asp-route-id="@s.Id">  @s.Name      </a> </td>
+            </tr>
+            <tr>
+                <td style="font-size:15px;">   @s.Title     </td>
+            </tr>
+            <tr>
+                <td>   @s.Post      </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
